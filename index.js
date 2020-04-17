@@ -20,6 +20,18 @@ var express_handlebars = require('express-handlebars').create({ defaultLayout:'m
 // Use the handlebars as the view engine
 app.engine('handlebars', express_handlebars.engine)
 app.set('view engine', 'handlebars')
+
+// ===============================================
+// Define static public directory
+// ===============================================
+app.use(express.static(__dirname + '/public'))
+
+// ===============================================
+// Set copyright to current year
+// ===============================================
+app.locals.copyrightYear = new Date().getFullYear()
+app.locals.copyrightHolder = 'Viewpoint Technical LLC'
+
 // ===============================================
 // Define routes
 // ===============================================
