@@ -1,6 +1,7 @@
 var express = require('express')
 var config = require('./config.json') // See config.template.json for sample config file
 var app = express()
+var path = require('path')
 app.set('port', config.port || 3000)
 app.set('env', config.env || 'development')
 // Allow self-signed certs in development
@@ -31,6 +32,13 @@ app.use(express.static(__dirname + '/public'))
 // ===============================================
 app.locals.copyrightYear = new Date().getFullYear()
 app.locals.copyrightHolder = 'Viewpoint Technical LLC'
+
+// ===============================================
+// Use favicon
+// ===============================================
+//npm install --save serve-favicon
+var favicon = require('serve-favicon')
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // ===============================================
 // Define routes
