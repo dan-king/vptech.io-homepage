@@ -31,7 +31,7 @@ app.use(express.static(__dirname + '/public'))
 // Set copyright to current year
 // ===============================================
 app.locals.copyrightYear = new Date().getFullYear()
-app.locals.copyrightHolder = 'Viewpoint Technical LLC'
+app.locals.copyrightHolder = config.copyrightHolder
 
 // ===============================================
 // Use favicon
