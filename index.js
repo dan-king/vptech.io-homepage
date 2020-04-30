@@ -49,6 +49,8 @@ app.get('/', function(req, res){
 })
 var homepage = require('./routes/homepage')
 app.use('/home', homepage)
+var sticker_packs = require('./routes/sticker-packs')
+app.use('/sticker-packs', sticker_packs)
 // ------------------------
 // Special routes if page not found or an error occurred
 // ------------------------
