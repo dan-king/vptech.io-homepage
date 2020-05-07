@@ -7,6 +7,9 @@ vptech.io-homepage.code-workspace
 # ESLint
 .eslintrc.json
 
+# Temp folder
+temp/
+
 # Logs
 logs
 *.log
