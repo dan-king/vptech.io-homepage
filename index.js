@@ -28,6 +28,17 @@ app.set('view engine', 'handlebars')
 app.use(express.static(__dirname + '/public'))
 
 // ===============================================
+// Paths to npm packages
+// ===============================================
+app.use('/bootstrap4', express.static(__dirname + '/node_modules/bootstrap/dist')) // redirect Bootstrap4 CSS and JavaScript
+
+app.use('/jquery3.5.1', express.static(__dirname + '/node_modules/jquery/dist')) // redirect jQuery JavaScript
+
+app.use('/datatables', express.static(__dirname + '/node_modules/datatables.net/js')) // redirect DataTables JavaScript
+
+app.use('/datatables_bootstrap4', express.static(__dirname + '/node_modules/datatables.net-bs4')) // redirect DataTables-Bootstrap4 CSS and JavaScript
+
+// ===============================================
 // Set copyright to current year
 // ===============================================
 app.locals.copyrightYear = new Date().getFullYear()
