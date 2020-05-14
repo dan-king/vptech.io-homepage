@@ -10,6 +10,8 @@
   "author": "Dan King <dan.king@vptech.io> (https://www.vptech.io)",
   "license": "MIT",
   "dependencies": {
+    "datatables.net": "^1.10.21",
+    "datatables.net-bs4": "^1.10.21",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
     "serve-favicon": "^2.5.0"
