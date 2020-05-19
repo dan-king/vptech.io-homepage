@@ -1,6 +1,6 @@
 # README.md
 
-# Example of invoking a CKAN data catalog via a WSO2 API gateway
+# Source code for the Viewpoint Technical LLC homepage - www.vptech.io
 
 ### Install
 `$ npm install`
