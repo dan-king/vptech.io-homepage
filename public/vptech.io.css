@@ -81,3 +81,6 @@ body {
 }
 
 .overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.margin-top10 {margin-top:10px}
+.padding-top10 {padding-top:10px}
