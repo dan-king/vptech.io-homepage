@@ -41,6 +41,29 @@
 
 <p>Some images were built upon other material as listed below.</p>
 
+<hr>
+<hr>
+<hr>
+<table class="display" id="example3">
+    <thead>
+        <tr>
+            <th>Image Name</th>
+            <th>Image</th>
+            <th>Copyright</th>
+        </tr>
+    </thead>
+</table>
+<hr>
+<hr>
+<hr>
+<table id="example" class="display" width="100%"></table>
+<hr>
+<hr>
+<hr>
+<table id="imageLicenseTable" class="table table-striped table-bordered" width="100%"></table>
+<hr>
+<hr>
+<hr>
 <table id="image_licenses" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
@@ -143,8 +166,6 @@
                 Modified work &copy; Copyright 2020 Viewpoint Technical LLC
             </td>
         </tr>
-
-
         <tr>
             <td valign="top">
                 Black lives matter in charlotte
@@ -235,10 +256,6 @@
                 Modified work &copy; Copyright 2020 Viewpoint Technical LLC
             </td>
         </tr>
-
-
-
-
         <tr>
             <td valign="top">
                 Protesting the Murder of George Floyd, Washington, DC USA
@@ -611,9 +628,68 @@
 </div>
 
 <script>
+var licenseData = [
+    [ "Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750" ],
+    [ "Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000" ],
+    [ "Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060" ]
+]
+
+var imageLicenseData = [
+    [
+        "Oakland BLM Horseback",
+        '<a href="/img/stickers/black-lives-matter/1593575336366_Plain-.png"><img src="/img/stickers/black-lives-matter/1593575336366_Plain-.png" width="100"></a>',
+        "copyright here" 
+    ]
+]
+
 $(document).ready(function() {
-    $('#image_licenses').DataTable(
-          "pageLength": 50
-    )
+//    $('#image_licenses').DataTable(
+//          "pageLength": 50
+//    )
+
+    $('#imageLicenseTable').DataTable( {
+        data: imageLicenseData,
+        columns: [
+            { title: "Image Name" },
+            { title: "Image" },
+            { title: "Copyright" }
+        ]
+    })
+
+    $('#example').DataTable( {
+        data: licenseData,
+        columns: [
+            { title: "Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+            { title: "Start date" },
+            { title: "Salary" }
+        ]
+    })
+
+    var data3 = [
+        {
+            "imageName": "Oakland BLM Horseback",
+            "imagePath": "/img/stickers/black-lives-matter/1593575336366_Plain-.png", 
+            "copyright": "copyright here" 
+        }
+    ];
+    $('#example3').dataTable({
+        "data": data3,
+        "columns": [
+            { "data": "imageName" }, 
+            { 
+                "data": "imagePath",
+                "render": function(data, type, row, meta){
+                    if(type === 'display'){
+                        data = '<a href="' + data + '"><img src="' + data + '" width="100"></a>'
+                    }
+                    return data
+                }
+            }, 
+            { "data": "copyright" }, 
+        ]
+    })
 })
 </script>
